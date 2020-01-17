@@ -1,0 +1,5 @@
+auto it = minmax_element(v.begin(), v.end()); 
+// first에는 최소를, second 에는 최대를 저장해준다.
+minmax_element 자체를 기본적인 여러 자료형들(심지어 문자열)까지도 사용가능하며
+auto it으로 하면 자동적으로 받을 수 있다.
+리턴해주는 값은 주소를 리턴해준다. *it.first, *it.second 를 이용해서 값을 받을 수 있다.
