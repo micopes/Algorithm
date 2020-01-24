@@ -1,3 +1,4 @@
+//
 pair)
 <utility> 헤더에 존재함.
 template <class T1, class T2> struct pair;
