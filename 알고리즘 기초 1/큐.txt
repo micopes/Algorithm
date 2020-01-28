@@ -1,0 +1,12 @@
+큐
+- 한쪽 끝에서만 자료를 넣고 다른 한쪽 끝에서만 뺄 수 있는 자료구조.
+FIFO(First in First out)
+스택 : LIFO(Last in First out)
+
+queue 는 주로 BFS에서 사용한다.
+
+[begin, end) begin은 포함, end 는 포함하지 않는다.
+
+begin == end -> empty()
+end - begin -> size
+

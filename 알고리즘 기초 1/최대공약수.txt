@@ -1,0 +1,19 @@
+GCD (greatest common divider)
+1. 그냥 a % c == 0 && b % c == 0으로 구하는 경우 O(N)
+2. 유클리드 호제법 O(logN)
+gcd(a, b)
+gcd(b, a%b)
+
+
+a = 16 b = 24면
+gcd(b = 24, a = 16)이 이후에 들어가므로 문제없다
+a와 b를 스왑할필요가 없다.
+
+재귀함수 말고
+while(b){
+	int r = a % b;
+	a = b;
+	b = r;
+}
+
+최소공배수 : a * b / Gcd(a, b)
