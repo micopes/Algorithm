@@ -1,0 +1,12 @@
+
+생성 :
+vector <int> v;
+
+0으로 초기화된 5개의 원소를 가지는 vector 생성 : 
+vector <int> v(5); 
+
+2로 초기화된 5개의 원소를 가지는 vector v 생성 : 
+vector <int> v(5, 2);
+
+v1 vector 복사해서 v2생성
+vector <int> v2(v1)
