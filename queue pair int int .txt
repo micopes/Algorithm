@@ -1,0 +1,3 @@
+queue < pair<int, int> > q;라고 만든 후에는
+q.push(pair<int,int>(r,c));       == 같은의미        q.push(make_pair(r,c)) 
+push할때 이렇게 사용해줘야 한다.
