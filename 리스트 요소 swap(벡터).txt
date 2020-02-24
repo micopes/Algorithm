@@ -1,0 +1,41 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+
+using namespace std;
+
+void swap(int a, int b){
+    int t;
+    t = a;
+    a = b;
+    b = t;
+}
+
+int main(void){
+    vector <int> v[2];
+    v[0].push_back(1);
+    v[0].push_back(2); 
+// 이러면 원래 1 2가 출력되고.
+    cout << v[0][0] << " " << v[0][1] << endl;
+// 여기서 2 1로 변하게 된다.
+    reverse(v[0].begin(), v[0].end());
+    cout << v[0][0] << " " << v[0][1] << endl;
+// 근데 여기서는 변하지 않는다. 왜지?? 값을 변경시키려면 call by reference.
+    swap(v[0][0], v[0][1]);
+    cout << v[0][0] << " " << v[0][1] << endl;
+    return 0;
+}
+
+
+void swap(int *a, int *b){
+	int t;
+	t = *a;	
+	*a = *b;
+	*b = t;
+}
+
+swap(&v[0][0], &v[0][1]);
+이런 식으로 형태를 변경시켜줘야 한다.
+
+
