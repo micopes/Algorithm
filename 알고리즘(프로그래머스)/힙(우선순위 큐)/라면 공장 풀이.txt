@@ -1,0 +1,60 @@
+라면 공장
+하루에 밀가루를 1톤씩 사용.
+앞으로 k일 이후에 밀가루 공급 가능 -> 해외 공장에서 밀가루를 수입해야 한다.
+해외 공장에서 향후 밀가루를 공급할 수 있는 날짜와 수량을 알려주었고, 
+라면 공장에서는 운송비를 줄이기 위해 최소한의 횟수로 밀가루를 공급받고자 한다.
+
+원래 남은 밀가루 수량 stock
+밀가루 공급 일정 dates, 해당 시점에 공급하능한 밀가루 수량 supplies
+원래 공장으로부터 공급받을 수 있는 시점 k
+
+최소 횟수 공급받으려면 몇번?
+dates[i]애는 i번째 공급가능일.
+supplies[i]에는 dates[i] 날짜에 공급가능한 밀가루 수량이 들어있다.
+
+효율을 추구할 수는 있는데
+4일만에 다떨어지면 무조건 4일 안에 수량을 공급받아야 한다.
+이러면 효율이 안될 수 있지.
+다 떨어지지 않아도 앞으로를 고려해서 수량을 공급받아야 하고.
+
+방법
+1) backtracking 으로 모든 경우를 고려.
+Cut) 여기서 stock이 0이 되는 것을 뺀다.
+근데 경우가 2 ~ 100,000이기 때문에 시간 복잡도가 너무 커질 수 있다. stack overflow도 발생할 수 있다.
+
+2)
+#include <string>
+#include <vector>
+#include <queue>
+
+using namespace std;
+
+int solution(int stock, vector<int> dates, vector<int> supplies, int k) {
+    int answer = 0;
+    for(int day = 1; day < k; ++day){ // if(day == k) // 종료.
+        stock--;
+        if(stock == 0){
+            int eff = 0;
+            int effIndex = -1;
+            for(int i = 0; i < dates.size(); ++i){
+                if(dates[i] <= day && eff < supplies[i]){
+                    eff = supplies[i];
+                    effIndex = i;
+                }
+            }
+            stock += supplies[effIndex]; // =나 +=나 같음 어차피 stock == 0 일때 조사하는 거라
+            supplies[effIndex] = 0;
+            answer++;
+            // 범위 안 최대 공급받는 거 공급받고 0으로 만들기.
+            // 여기서 루프로 최솟값을 찾으면 시간복잡도 커진다. 여기서 힙 사용해야 함
+            // 1) <= day에 해당하면서 2) supply 가장 높은 index를 찾아서
+            // pq에서 pop()해줘야 한다.
+
+            // 달리 말하면 supply[i] 최대부터 찾는데, date[i] <= day
+            // priority_queue인데 pair <int, int> 로 넣어주고. 우선순위는 supply 가장 높은 걸로 설정해줘야 한다.
+        }
+    }
+    return answer;
+}
+
+3) 2)에서 좀 더 발전시켜서 좀 디테일하게 하면 heap, priority_queue 를 이용해서 가능할것같은데. 
