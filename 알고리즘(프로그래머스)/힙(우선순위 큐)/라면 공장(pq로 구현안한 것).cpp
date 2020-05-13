@@ -1,4 +1,3 @@
-#include <iostream>
 #include <string>
 #include <vector>
 #include <queue>
@@ -32,24 +31,4 @@ int solution(int stock, vector<int> dates, vector<int> supplies, int k) {
         }
     }
     return answer;
-}
-
-int main(void){
-    int stock;
-    vector <int> dates;
-    vector <int> supplies;
-    int k;
-    cin >> stock;
-    int x;
-    for(int i = 0; i < 3; ++i){
-        cin >> x;
-        dates.push_back(x);
-    }
-    for(int i = 0; i < 3; ++i){
-        cin >> x;
-        supplies.push_back(x);
-    }
-    cin >> k;
-    cout << solution(stock, dates, supplies, k);
-    return 0;
 }

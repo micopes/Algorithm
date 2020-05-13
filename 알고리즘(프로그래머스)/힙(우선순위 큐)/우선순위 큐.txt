@@ -1,8 +1,21 @@
-출처 : https://blog.naver.com/kks227/220791188929 (rie's blog)
+// 출처 : https://blog.naver.com/kks227/220791188929 (rie's blog)
+
+priority_queue<T, Container, Compare> : 원하는 자료형 및 클래스 T를 통해 생성. 여기서 Container는 vector와 같은 컨테이너이며 Compare는 비교함수 클래스이다.
 
 우선순위 큐
 큐가 이름 뒤에 붙어있듯 push, top, pop 연산밖에 없다. 사용 방법은 queue 와 동일하며
 #include <queue> 를 추가하면 prioirty_queue도 사용할 수 있다.
+
+** 우선순위 큐 우선순위를 설정하는 방법 ** 
+// 출처 : https://koosaga.com/9
+struct cmp{
+    bool operator()(pair <int, int> a, pair <int, int> b){
+        if(a.first < b.first){
+            return a.second > b.second;
+        }
+        return a.first < b.first;
+    }
+}
 
 이름은 큐지만 내부 구조는 큐와 완전히 다르다.
 top(), pop()에서 추출되는 원소는 제일 먼저 들어왔던게 아닌 현재 우선순위 큐 안에서 제일 우선순위가 높은 원소가 된다.

@@ -23,11 +23,13 @@ int solution(int stock, vector <int> dates, vector <int> supplies, int k){
     for(int i = 0; i < sz; ++i){
         pq.push(pair<int, int>(dates[i], supplies[i]));
     }
-    day += stock;
-    stock = 0;
+
     while(day < k){
+        day += stock;
+        stock = 0;
         vector <pair <int, int> > temp;
-        while(1){ // 밀가루가 바닥날 수 밖에 없는 경우는 없으므로 pq.empty()는 고려하지 않아도 된다.
+        // supply높은 순으로 뽑는데 day 범위를 만족하는 것이 나오면 그것을 pq에서 제거하고 stock에 추가해준다.
+        while(1){
             int d = pq.top().first;
             int supply = pq.top().second;
             pq.pop();
@@ -35,15 +37,14 @@ int solution(int stock, vector <int> dates, vector <int> supplies, int k){
                 stock = supply;
                 answer++;
                 for(int i = 0; i < temp.size(); ++i){
-                    pq.push(temp[i]);   // day범위 만족못하지만 supply높아 먼저나온것 저장한 것을 다시 pq에 넣는다.
+                    pq.push(temp[i]);
                 }
                 break;
             }else{
                 temp.push_back(pair<int, int>(d, supply)); // day범위 만족못하지만 supply높아 먼저나온것 저장.
             }
         }
-        day += stock;
-        stock = 0;
     }
+    answer--;
     return answer;
 }
