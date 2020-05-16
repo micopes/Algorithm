@@ -16,10 +16,8 @@ int solution(vector<int> scoville, int K) {
         if(pq.top() >= K || pq.size() <= 1)
             break;
         int x = pq.top();
-        cout << x << " ";
         pq.pop();
         int y = pq.top();
-        cout << y << " " << endl;
         pq.pop();
         int z = x + 2*y;
         answer++;
