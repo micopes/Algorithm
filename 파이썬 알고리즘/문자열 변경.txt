@@ -1,0 +1,2 @@
+li.replace('a', 'b')
+a를 b로 바꾸는 것

@@ -1,0 +1,13 @@
+문자열 찾기
+- count()
+
+- find() 
+- index() 
+# 오른쪽부터 찾기
+- rfind() 
+- rindex()
+#find와 index의 차이
+: find는 없어도 오류가 나지 않고 -1을 반환하지만 index는 없으면 오류
+
+- startswith() # 시작을 이것으로 하는가? : True, False를 반환
+- endswith() # 끝을 이것으로 하는가? : True, False를 반환
