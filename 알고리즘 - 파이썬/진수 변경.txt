@@ -1,8 +1,16 @@
-8진수로 입력받기 위해서
-n = input()
-int(n, 8) # 숫자를 8진수로 변경
+# 10진수에서 2진수, 8진수, 16진수 변환
+bin(), oct(), hex() 내장함수 이용
 
-마찬가지로 16진수는
 
-n = input()
-int(n, 16)
+b = bin(value) # 0b111100
+o = oct(value) # 0o74
+h = hex(value) # 0x3c
+
+print(b)
+print(o)
+print(h)
+:전부 문자열 형태임.
+
+# 다른 진수 형태에서 10진수로 변환
+2진수 형태에서 10진수로 변환
+result = int(n, 2) # n이 11이면 result = 3
