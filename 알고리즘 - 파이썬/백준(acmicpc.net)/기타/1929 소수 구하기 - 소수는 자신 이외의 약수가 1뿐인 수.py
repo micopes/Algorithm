@@ -12,9 +12,7 @@ for i in range(4, N+1):
         if i % j == 0:
             sosu[i] = 0
             break
-        if j*j > i:
-            break
-
+        
 for i in range(M, N+1):
     if sosu[i] == 1 :
         print(i)
