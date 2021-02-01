@@ -8,7 +8,8 @@ sosu[3] = 1
 M, N = map(int, input().split())
 
 for i in range(4, N+1):
-    for j in range(2, int(math.sqrt(i))+1):
+    end = int(math.sqrt(i))
+    for j in range(2, end+1):
         if i % j == 0:
             sosu[i] = 0
             break
