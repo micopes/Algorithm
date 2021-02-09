@@ -1,0 +1,13 @@
+join -> 문자열만 지원한다.
+
+data = [1, 2, 3, 4]
+print('\n'.join(data))  -> Error!!
+
+data = ['1', '2', '3', '4']
+print('\n'.join(data))
+
+결과:
+1
+2
+3
+4
