@@ -1,0 +1,11 @@
+s = set()
+1. add
+- s.add(value) : value를 집합에 넣는다.
+2. remove
+- s.remove(value) : value를 집합에서 제거한다. 없으면 에러
+3. pop()
+- 다른 것에서의 pop()과 동일
+4. clear()
+- s.clear()로 집합 안의 모든 요소 제거
+5. discard()
+- s.discard(value) : value를 집합에서 제거한다. 없어도 에러 안나옴.
