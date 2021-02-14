@@ -4,7 +4,7 @@ input = sys.stdin.readline
 
 def bfs(S):
     c[S] = 1
-    q.append([S, 0]) # 현재 층 위치, 횟수
+    q.append([S, 1]) # 현재 층 위치, 횟수
     while q:
         x, cnt = q.popleft()
         if x == G:
@@ -23,9 +23,7 @@ q = deque()
 c = [0 for _ in range(1000001)]
 bfs(S)
 
-if S == G:
-    print(0)
-elif c[G] != 0:
-    print(c[G]) # 처음에 1로 시작했기 때문에
+if c[G] != 0:
+    print(c[G]-1) # 처음에 1로 시작했기 때문에
 else:
     print("use the stairs")
