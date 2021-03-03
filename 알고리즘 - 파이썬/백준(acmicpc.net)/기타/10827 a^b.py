@@ -8,4 +8,4 @@ from decimal import Decimal, getcontext
 a, b = input().rstrip().split()
 # 최대 99.999999999 => 11자리 * 99 -> 1100 자릿수
 getcontext().prec = 1101
-print("{0:f}".format(Decimal(a)**int(b)))
+print("{0:f}".format(Decimal(a)**int(b))) # 0은 첫번째, :f는 실수형으로 출력하겠다는 뜻.
