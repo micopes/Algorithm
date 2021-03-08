@@ -1,16 +1,10 @@
 import sys
-# input = sys.stdin.readline
+input = sys.stdin.readline
 
 n = int(input().rstrip())
 
-now = 100
-health = [0]
-joy = [0]
-healthTemp = list(map(int, input().rstrip().split()))
-joyTemp = list(map(int, input().rstrip().split()))
-for i in range(len(healthTemp)):
-    health.append(healthTemp[i])
-    joy.append(joyTemp[i])
+health = [0] + list(map(int, input().rstrip().split()))
+joy = [0] + list(map(int, input().rstrip().split()))
 
 dp = [[0]*100 for _ in range(n+1)]
 for i in range(1, n+1):
