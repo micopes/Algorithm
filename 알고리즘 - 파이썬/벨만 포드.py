@@ -14,8 +14,9 @@ def bf(start):
             cost = graph[j][2]
             
             if dist[cur] != INF and dist[next_v] > dist[cur] + cost:
-                dist[next_v]
-                if i == n-1:
+                dist[next_v] = dist[cur] + cost
+                # v번째 round에서도 값이 갱신된다면 negative-cycle이 있는 것. 
+                if i == v-1:
                     return True
     return False
 
