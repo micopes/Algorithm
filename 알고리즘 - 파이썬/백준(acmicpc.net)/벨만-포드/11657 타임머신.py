@@ -1,16 +1,18 @@
 import sys
-input = sys.stdin.readline
+# input = sys.stdin.readline
 INF = sys.maxsize
 
 def bf(start):
     dist[start] = 0
     
     for i in range(v):
-        for j in range(e):
-            cur = graph[j][0]
-            next_v = graph[j][1]
-            cost = graph[j][2]
+        for edge in graph:
+            cur = edge[0]
+            next_v = edge[1]
+            cost = edge[2]
             
+            # dist[cur] != INF를 넣어주는 이유는 이 조건이 있어야
+            # 시작지점부터 연결된 노드를 찾을 수 있기 때문에.
             if dist[cur] != INF and dist[next_v] > dist[cur] + cost:
                 dist[next_v] = dist[cur] + cost
                 if i == v-1:
