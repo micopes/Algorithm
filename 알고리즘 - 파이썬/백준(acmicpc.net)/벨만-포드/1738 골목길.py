@@ -52,12 +52,11 @@ if cycle == True or dist[n] == _INF:
     print(-1)
 else:
     ans = []
-    ans.append(n)
     val = n
-    while val != 1:
-        k = path[val]
-        ans.append(k)
-        val = k
+    while val != 0:
+        ans.append(val)
+        val = path[val]
+    
     ans = ans[::-1]
-    for i in ans:
-        print(i, end = " ")
+    for i in range(len(ans)):
+        print(ans[i], end = " ")
