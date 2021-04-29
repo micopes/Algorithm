@@ -20,8 +20,6 @@ def union(a, b):
     else:
         parent[a] = b
     return 0
-    
-    
 
 V, E = map(int, input().rstrip().split())
 
