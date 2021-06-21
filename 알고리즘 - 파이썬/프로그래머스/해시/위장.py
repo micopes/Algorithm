@@ -1,17 +1,14 @@
 def solution(clothes):
-    answer = 0
-    dic = {}
-    wearname = []
-    for i in range(len(clothes)):
+    type = dict()
+    for k in clothes:
         try:
-            dic[clothes[i][1]] += 1
+            type[k[1]] += 1
         except:
-            dic[clothes[i][1]] = 1
-            wearname.append(clothes[i][1])
+            type[k[1]] = 1
     
-    answer = 1
-    for i in range(len(wearname)):
-        answer *= (dic[wearname[i]]+1)
-    answer -= 1
+    ret = 1
+    for i in type:
+        ret *= (type[i]+1) # 0개 입는 것 포함
     
-    return answer
+    ret -= 1 # 하나의 의상도 입지 않을 경우
+    return ret
