@@ -1,5 +1,5 @@
 import sys
-# input = sys.stdin.readline
+input = sys.stdin.readline
 
 n = int(input().rstrip())
 
@@ -18,9 +18,5 @@ for i in range(n):
     sum1 += point[i][0] * point[i+1][1]
     sum2 += point[i][1] * point[i+1][0]
 
-ans = round((sum1-sum2)/2, 1)
-if ans < 0:
-    ans *= -1
-
+ans = round(abs(sum1-sum2)/2, 1)
 print(ans)
-
