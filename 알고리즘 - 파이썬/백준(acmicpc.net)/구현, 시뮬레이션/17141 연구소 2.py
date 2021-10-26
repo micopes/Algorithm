@@ -62,7 +62,6 @@ for i in range(n):
 ans = sys.maxsize
 # 바이러스를 놓을 수 있는 위치에서 m개를 뽑아 selected.
 for selected in combinations(location, m):
-    maps = copy.deepcopy(graph)
     ans = min(ans, bfs(selected))
 
 if ans == sys.maxsize:
