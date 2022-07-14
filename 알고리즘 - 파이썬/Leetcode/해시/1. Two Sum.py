@@ -8,7 +8,6 @@ class Solution:
         #         if nums[i] + nums[j] == target:
         #             return [i, j]
         
-        
         # 방법 2. x + y = target 딕셔너리 이용하면 된다.
         dic = {}
         for index, value in enumerate(nums):
