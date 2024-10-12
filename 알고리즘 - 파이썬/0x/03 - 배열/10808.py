@@ -10,3 +10,4 @@ for c in s:
 
 for idx in range(ord('z') - ord('a') + 1):
 	print(dic[idx], end = " ")
+
