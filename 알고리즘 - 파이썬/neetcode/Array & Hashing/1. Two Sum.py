@@ -4,8 +4,6 @@ class Solution:
 
     # 1. 이분 탐색
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-
-        # x: 첫 값.
         def binarySearch(val, start, end):
             while start <= end:
                 mid = (start + end) // 2
