@@ -2,7 +2,7 @@ class Solution:
     # 문제 조건
     # - 정확히 하나의 답만 있음.
 
-    # 1. 이분 탐색
+    # 1. 이분 탐색 O(nlogn)
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         def binarySearch(val, start, end):
             while start <= end:
